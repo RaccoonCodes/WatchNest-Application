@@ -36,17 +36,29 @@ when using the http host, it will redirect to https host.
 
 **Note:** If you are using this project for the first time, or locally, make sure to inject the seed that is available in the api when logged in as Administrator or disable the authorization for admin-only in case there is no admin credentials available.
 
+Once seed has been implemented, you have two dummy access for testing,
+
+`Username`: TestUser
+
+`Password`: MyVeryOwnTestPassword123$
+
+`Username`: TestAdministrator
+
+`Password`: MyVeryOwnTestPassword123$
+
 # Packages Used
 This project uses the following packages, so please ensure they are installed when using this project:
 
 - Microsoft.Web.LibraryManager.Cli 2.1.175
 - System.IdentityModel.Tokens.Jwt 8.2.0
 - Caching SqlServer 8.0.6
-- Bootstrap 5.1.3
 - Google fonts
+- Bootstrap 5.1.3(through libman)
 - Jquery-validate 1.19.3 (through libman)
 - Jquery-validation-unobtrusive  3.2.12 (through libman)
 - Jquery 3.6.0 (through libman)
+
+
 
 # Program.cs
 The following describes a little bit about what has been implemented
