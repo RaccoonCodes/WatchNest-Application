@@ -429,6 +429,128 @@ function updatePartial(url, data, containerId) {
 ```
 it send a GET request to the retrived paginated data based on the URL that it recieved. After a successful retrieval, it updates the table and paginated navigation based on specific attributed, `#table-content`, `#pagination-container`. 
 
+## SASS
+Before going into depth for how I used SASS, I'll explain quickly how I created sass and how to convert sass to css to use in views files.
+
+Start off by creating a sass by adding a file with an extension `.scss` in your wwwroot folder, or wherever you keep your design files. 
+
+Afterwords, in the command line already in project directory, use the following command:
+
+`sass styles.scss styles.css`
+
+* Replace the `styles` with the name of your file.
+ 
+This command creates a CSS file that Views files can use to render custom properties. Whenever you update the SASS file, you need to update the css file by running the command above again.
+
+You can also use the following command to automatically recompile the changes made from SASS file,
+
+`sass --watch styles.scss:styles.css`
+
+* Replace the `styles` with the name of your file.
+
+Now moving onto how and why I used SASS
+
+
+For this front-end part of the project, I have used SASS for a couple of reasons.In my SASS file, I used variables such as 
+```scss
+$cardColor: #272524;
+$gradient: linear-gradient(45deg, #ff7c7d, #ffda67);
+$highlightColor: #ffda67;
+```
+which I can reuse them for other parts that I may use. Also if I need to change a shared color across different properties, I can do so easily by changing one variable. 
+
+I also usedd SASS for nesting and reducing redundancy, keeping them easy to read and maintain. For example, in my file,
+```scss
+li {
+    color: #fff;
+    position: relative;
+
+    &::after {
+        content: " ";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+
+    &:hover::after {
+        transform: scale(1);
+    }
+
+    &.center-text {
+        flex-grow: 1; /* Allow item to take extra space */
+        text-align: center;
+    }
+}
+```
+Lastly, I enhance my website more by adding animation and special effects to it such as adding animation:
+
+```scss
+@keyframes rotate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+```
+
+adding glass effect into login cards:
+
+```scss
+.login-card {
+    /* Glass-like effect */
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    margin: 0 20px;
+    padding: 70px 30px 44px;
+    border-radius: 1.25rem;
+    background: rgba(148, 170, 51, 0.7); /* Semi-transparent*/
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    border: 1px solid rgba(33, 108, 231, 0.3);
+}
+```
+lastly, adding hover states to add a small effect to navigation buttons when the user hover, or selecting items from it:
+```scss
+.navbar {
+// omitted for clarity 
+
+    li {
+        color: #fff;
+        position: relative;
+
+        &::after {
+            content: " ";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+
+        &:hover::after {
+            transform: scale(1);
+        }
+// omitted for clarity 
+    }
+}
+```
+
+There are more examples in both of my SASS files in this project, so please take a look at it and make some changes if you want to experiment with SASS. 
+
 ## Conclusion
 This is the final version for the main application for the project WatchNest. As mentioned at the beginning of this README, you need to download or install the necessary package and ensure you have wwwroot as a folder in your environment. Since this project is the Main Application, you also need to download the API for this application to work as it needs to communicate to SQL server to CRUD user's series.
 
