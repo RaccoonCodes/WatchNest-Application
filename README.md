@@ -1,5 +1,5 @@
 # WatchNest Main Application
-This Project contains the main application. To use this, you will need to download this project and the API for this project. The explanation for how each action in the API work is explained in the README for the API repository. This README will focus on the front-end and back-end of this application.
+This Project contains the main application. To use this, you will need to download this project and the API for this project (which is named WatchNest - API). The explanation for how each action in the API work is explained in the README for the API repository. This README will focus on the front-end and back-end of this application.
 
 # Table of Contents
 - [Overview](#overview)
