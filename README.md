@@ -20,6 +20,7 @@ This Project contains the main application. To use this, you will need to downlo
   - [WatchList](#watchlist)
   - [Home](#home)
 - [Ajax script](#ajax-script)
+- [SASS](#SASS)
 - [Conclusion](#conclusion)
 
 
@@ -89,6 +90,16 @@ The following describes a little bit about what has been implemented
 
 ### Distributed SQL Caching
 I have set up caching to be store in SQL database. Table is name as `AppCache`. This will store results produced by the API calls to improve performance and reduce the number of redundant API calls
+
+If you need to create the table for caching, run the following command in command line:
+
+`dotnet sql-cache create "{connectionString}" dbo AppCache`
+
+The {connectionString} needs to be replace with your actual connection string. If you want to use the local db in Visual studio, you can use the local connection that is used in appsettings.json (named localDb). 
+Also be sure to replace any double backslash (such as in localhost\\Myproject) with a single backslash (localhost\MyProject); otherwise, the CLI command will fail. 
+
+Make sure to replace {conncetionString} and keep the double quotation ( " " ) in the command line
+
 
 ### Cookie Authentication
 I have implemented cookie authentication, which manages user's session. Its scheme consist of: 
