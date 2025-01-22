@@ -47,7 +47,7 @@ Once seed has been implemented, you have two dummy access for testing,
 `Password`: MyVeryOwnTestPassword123$
 
 # Packages Used
-This project uses the following packages, so please ensure they are installed when using this project:
+If you need to have the packages installed to run this project, please ensure the following packages are installed when using this project:
 
 - Microsoft.Web.LibraryManager.Cli 2.1.175
 - System.IdentityModel.Tokens.Jwt 8.2.0
@@ -58,6 +58,30 @@ This project uses the following packages, so please ensure they are installed wh
 - Jquery-validation-unobtrusive  3.2.12 (through libman)
 - Jquery 3.6.0 (through libman)
 
+All the commands that proceeds this line must be in the project directory in command line.
+
+For Libman, ensure you have it installed in your system. If not, you can use the following command line:
+
+`dotnet tool install --global Microsoft.Web.LibraryManager.Cli --version 2.1.175`
+
+then,
+
+`libman init -p cdnjs`
+
+The command above initializes libman, which is the library manager, and sets cdnjs (content delivery network for javascript) as a default provider for client side libray.
+
+Afterwords, install Bootstrap using the following command:
+
+`libman install bootstrap@5.1.3 -d wwwroot/lib/bootstrap`
+
+Install JQuery packages:
+
+`libman install jquery@3.6.0 -d wwwroot/lib/jquery`
+
+Install validation packages for client side
+`libman install jquery-validate@1.19.3 -d wwwroot/lib/jquery-validate`
+
+`libman install jquery-validation-unobtrusive@3.2.12 -d wwwroot/lib/jquery-validation-unobtrusive`
 
 
 # Program.cs
